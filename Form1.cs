@@ -82,7 +82,7 @@ namespace WindowsFormsApp2
             webDriver.Url = "https://twitch.facepunch.com/";
             webDriver.Navigate();
 
-            ReadOnlyCollection<IWebElement> webElements = webDriver.FindElements(By.XPath("//a[@class='drop-item']"));
+            ReadOnlyCollection<IWebElement> webElements = webDriver.FindElements(By.XPath("//a[@class='drop'] | //a[@class='drop is-live']"));
             listBox2.Items.Clear();
 
             foreach (IWebElement webElement in webElements)
@@ -99,18 +99,20 @@ namespace WindowsFormsApp2
                         {
                             streamers[i].twitch = href;
 
-                            IWebElement statusElement = webElement.FindElement(By.CssSelector("div.drop-item__header-status"));
+                            IWebElement statusElement = webElement.FindElement(By.CssSelector("div.online-status"));
 
                             streamers[i].Status = statusElement.GetAttribute("innerHTML").Trim();
 
                             if (task == Task.Playing && streamers[i].identifier == streamers[streamerIndex].identifier && !streamers[i].IsStreaming)
                             {
                                 streamers[streamerIndex].elapsed.Stop();
+                                streamers.RemoveAt(streamerIndex);
                                 streamerIndex = -1;
                                 task = Task.None;
 
                                 RefreshList();
                                 timer1_Tick(sender, e);
+                                return;
                             }
 
                             if (task == Task.None && streamers[i].IsStreaming)
