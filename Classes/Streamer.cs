@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace WindowsFormsApp2
+namespace RTD
 {
     /// <summary>
     /// Streamer

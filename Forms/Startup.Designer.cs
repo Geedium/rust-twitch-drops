@@ -1,6 +1,6 @@
-﻿namespace WindowsFormsApp2
+﻿namespace RTD
 {
-    partial class Form1
+    partial class Startup
     {
         /// <summary>
         /// Required designer variable.
@@ -269,7 +269,7 @@
             0,
             0});
             // 
-            // Form1
+            // Startup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -283,7 +283,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(249, 451);
-            this.Name = "Form1";
+            this.Name = "Startup";
             this.Text = "Rust Twitch Drops";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.statusStrip1.ResumeLayout(false);

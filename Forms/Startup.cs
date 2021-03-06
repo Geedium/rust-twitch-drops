@@ -6,9 +6,9 @@ using OpenQA.Selenium;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace WindowsFormsApp2
+namespace RTD
 {
-    public partial class Form1 : Form
+    public partial class Startup : Form
     {
         public List<Streamer> streamers = new List<Streamer>();
         private IWebDriver webDriver;
@@ -23,10 +23,23 @@ namespace WindowsFormsApp2
 
         private Task task;
 
-        public Form1()
+        public Startup(string[] args)
         {
             InitializeComponent();
 
+            bool headless = true;
+
+            if (args.Length != 0)
+            {
+                foreach (string arg in args)
+                {
+                    if (arg == "--display")
+                    {
+                        headless = false;
+                    }
+                }
+            }
+            
             FirefoxProfileManager manager = new FirefoxProfileManager();
             FirefoxProfile profile = manager.GetProfile("Selenium");
 
@@ -43,7 +56,7 @@ namespace WindowsFormsApp2
 
             options.AddArgument("--log-level=0");
             options.SetPreference("media.volume_scale", "0.0");
-            // options.AddArgument("--headless");
+            if (headless) options.AddArgument("--headless");
 
             webDriver = new FirefoxDriver(service, options);
             streamDriver = new FirefoxDriver(service2, options);
