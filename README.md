@@ -1,9 +1,9 @@
 # Rust Twitch Drops
-Easiest way to earn twitch drops.
+This program earns [Twitch](https://twitch.tv/) item drops by watching for any changes happening on twitch.facepunch.com for [Rust](https://store.steampowered.com/app/252490/Rust/) video game based on [Selenium WebDriver](https://selenium.dev/).
 
 | Requirements | Information |
 | ------------ | ----------- |
-| [.NET Framework 4.5.2](https://www.microsoft.com/en-us/download/details.aspx?id=42642) | Straightforward installation. |
+| [.NET Framework 4.5.2](https://microsoft.com/en-us/download/details.aspx?id=42642) | Straightforward installation. |
 | [geckodriver](https://github.com/mozilla/geckodriver/releases) | Setup environment variables path to geckodriver's folder. |
 
 Using Profile Trickery
