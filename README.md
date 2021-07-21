@@ -1,5 +1,5 @@
 # Rust Twitch Drops
-This program earns [Twitch](https://twitch.tv/) item drops by watching for any changes happening on twitch.facepunch.com for [Rust](https://store.steampowered.com/app/252490/Rust/) video game based on [Selenium WebDriver](https://selenium.dev/).
+This application earns [Twitch](https://twitch.tv/) item drops by watching for any changes happening on twitch.facepunch.com for [Rust](https://store.steampowered.com/app/252490/Rust/) video game based on [Selenium WebDriver](https://selenium.dev/).
 
 | Requirements | Information |
 | ------------ | ----------- |
